@@ -1,14 +1,22 @@
 :root {
-  --primary: #6200ee;
-  --primary-variant: #3700b3;
-  --secondary:#03DAC6;
-  --secondary-variant: #018786;
+  --backgound: #596A78;
+  --background-variant: #A8B4B5;
+  --detailing: #282828;
+  --detailing-variant: black;
+  --error: Red;
+  --primary-text: white;
+  --secondary-text: black;
+  --base-spacing: 8px;
+  --primary-border: solid var(--detailing) 3px;
+  --secondary-border: solid var(--detailing-variant) 3px;
 
-}
+ } body {
+    font-family: 'Underdog', cursive;
+  }
+
 h1 {
 --background: var(--primary);
+margin: calc(var(--base-spacing)* 20)
 }
 
-body {
-  font-family: 'Underdog', cursive;
-}
+
