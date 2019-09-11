@@ -39,6 +39,16 @@ nav .is-hidden {
   height: 0;
 }
 
+.hero{
+  background: url(https://picsum.photos/600/480);
+  background-size: cover;
+  height: 20vh;
+  max-height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -67,3 +77,29 @@ nav li {
   padding: var(--base-spacing) 0;
 }
 
+section {
+  padding: calc(var(--base-spacing) * 3);
+}
+
+
+nav a,
+.hero a {
+  text-decoration: none;
+}
+
+.hero a{
+  background-color: var(--detailing);
+  border-radius: var(--base-spacing);
+  padding: var(--base-spacing);
+  color: var(--primary-text);
+}
+
+.hero a{
+  background: var(--detailing);
+}
+.read-more-btn{
+  background: var(--primary-text);
+  padding: var(--base-spacing);
+  border-radius: var(--base-spacing);
+  margin: var(--base-spacing);
+}
