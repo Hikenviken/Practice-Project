@@ -30,11 +30,106 @@ header {
   align-items: center;
 }
 
-figure {
+footer {
+  border-top: var(--detailing-variant)
+}
+
+.fas {
+  font-size: 40px;
+}
+
+nav .fas {
+  margin: var(--base-spacing);
+  /* transform: translateX(80vw) */
+  transform: translateX(calc(100vw - var(--base-spacing) * 10));
+}
+
+nav .is-hidden {
+  min-height: 72px;
+  font-size: 0;
+  height: 0;
+}
+
+.hero{
+  background: url(https://picsum.photos/800/120);
+  background-size: cover;
+  height: 20vh;
+  max-height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+figure{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+margin: 0;
+}
+img {
+border-radius: 50%;
+box-shadow: calc(var(--base-spacing)* 0.5)
+}
+
+ul {
+  padding: 0;
+  text-align: center;
+  list-style-type: none;
+}
+nav ul {
+  list-style-type: none;
+  text-align: center;
+}
+nav li {
+  padding: var(--base-spacing) 0;
+}
+
+section {
+  padding: calc(var(--base-spacing) * 3);
+}
+
+footer ul {
+  display: flex;
+  justify-content: space-between;
+}
+nav a,
+.hero a {
+  text-decoration: none;
+}
+
+.hero a{
+  background-color: var(--detailing);
+  border-radius: var(--base-spacing);
+  padding: var(--base-spacing);
+  color: var(--primary-text);
+}
+
+.hero a{
+  background: var(--detailing);
+}
+.read-more-btn{
+  background: var(--primary-text);
+  padding: var(--base-spacing);
+  border-radius: var(--base-spacing);
+  margin: var(--base-spacing);
+}
+
+footer {
+  border-top: var(--background-variant)
+}
+footer a {
+  color: var(--primary-text);
+}
+
 
 h2 {
   margin: 0;
