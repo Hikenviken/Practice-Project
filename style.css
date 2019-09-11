@@ -33,7 +33,11 @@ nav .fas {
   transform: translateX(calc(100vw - var(--base-spacing) * 10));
 }
 
-
+nav .is-hidden {
+  min-height: 72px;
+  font-size: 0;
+  height: 0;
+}
 
 header {
   display: flex;
@@ -62,4 +66,4 @@ nav ul {
 nav li {
   padding: var(--base-spacing) 0;
 }
-/* nav a:hover{ */
+
