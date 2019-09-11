@@ -23,6 +23,14 @@ footer {
   border-top: var(--detailing-variant)
 }
 
+.fas {
+  font-size: 40px;
+}
+
+nav .fas {
+  margin: var(--base-spacing);
+}
+
 header {
   display: flex;
   flex-direction: column;
