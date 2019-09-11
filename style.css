@@ -29,7 +29,11 @@ footer {
 
 nav .fas {
   margin: var(--base-spacing);
+  /* transform: translateX(80vw) */
+  transform: translateX(calc(100vw - var(--base-spacing) * 10));
 }
+
+
 
 header {
   display: flex;
