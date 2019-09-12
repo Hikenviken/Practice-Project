@@ -1,5 +1,5 @@
 #MaxEddy
-## This is a basic header   
+## This is a basic header
 
 ### This header is also basic, but also small
 
