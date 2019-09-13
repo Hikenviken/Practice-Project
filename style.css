@@ -14,7 +14,9 @@
 body {
   font-family: "Underdog", cursive;
 }
-
+a {
+  text-decoration: none;
+}
 h1 {
   background: var(--primary);
 
@@ -32,6 +34,9 @@ header {
   align-items: center;
 }
 
+/* nav {
+  max-height: none;
+} */
 .fas {
   font-size: 40px;
 }
@@ -43,7 +48,7 @@ nav .fas {
   transform: translateX(calc(100vw - var(--base-spacing) * 10));
 }
 
-nav .is-hidden {
+.is-hidden--mobile {
   min-height: 72px;
   font-size: 0;
   height: 0;
@@ -81,15 +86,12 @@ ul {
 nav ul {
   list-style-type: none;
   text-align: center;
+  text-decoration: none;
 }
 nav li {
-  padding: var(--base-spacing) 0;
+  display: flex;
+  justify-content: space-around;
 }
-
-section {
-  padding: calc(var(--base-spacing) * 3);
-}
-
 footer ul {
   display: flex;
   justify-content: space-between;
@@ -106,10 +108,71 @@ footer a {
   color: var(--primary-text);
   text-decoration: none;
 }
+section {
+  padding: calc(var(--base-spacing) * 3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+input,
+textarea {
+  border: solid thin black;
+}
+form div {
+  display: flex;
+  flex-direction: column;
+  margin: var(--base-spacing)
+}
 
+@media screen and (min-width: 768px) {
+  h2 {
+    background: var(--background-variant);
+    display: flex;
+    text-align: center;
+  }
+  .is-hidden--tablet {
+    font-size: 0;
+    height: 0;
+  }
+}
+@media screen and (min-width: 1068px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  div.hero {
+    height: 20vh;
+    max-height: 600px;
+  }
+  .is-hidden--desktop {
+    font-size: 0;
+    height: 0;
+  }
+  .is-shown--desktop {
+    min-height: 100px;
+    font-size: initial;
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+  }
+  .flex-container--desktop {
+    display: flex;
+  }
+}
+section p {
+  margin-bottom: auto;
+}
 .read-more-btn {
   background: var(--primary-text);
   padding: var(--base-spacing);
   border-radius: var(--base-spacing);
   margin: var(--base-spacing);
+  align-items: center;
+  max-width: calc(var(--base-spacing) * 15);
 }
