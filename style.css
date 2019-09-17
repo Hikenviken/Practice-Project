@@ -24,8 +24,8 @@ h1 {
 }
 
 footer {
-  border-top: var(--detailing-variant);
-  border-top: var(--background);
+  border-top: var(--primary-border);
+  padding: var(--base-spacing);
 }
 
 header {
@@ -46,12 +46,6 @@ nav .fas {
 
   /* transform: translateX(80vw) */
   transform: translateX(calc(100vw - var(--base-spacing) * 10));
-}
-
-.is-hidden--mobile {
-  min-height: 72px;
-  font-size: 0;
-  height: 0;
 }
 
 .hero {
@@ -137,6 +131,14 @@ input[type="submit"] {
   text-align: center;
 }
 
+.is-hidden--mobile {
+  min-height: 72px;
+  font-size: 0;
+  height: 0;
+}
+.menu-spacing--mobile {
+  margin: 20px;
+}
 @media screen and (min-width: 768px) {
   h2 {
     background: var(--background-variant);
@@ -158,10 +160,6 @@ input[type="submit"] {
     height: 20vh;
     max-height: 600px;
   }
-  .is-hidden--desktop {
-    font-size: 0;
-    height: 0;
-  }
   .is-shown--desktop {
     min-height: 100px;
     font-size: initial;
@@ -172,6 +170,16 @@ input[type="submit"] {
   }
   .flex-container--desktop {
     display: flex;
+  }
+  .flex-row--desktop {
+    flex-direction: row;
+  }
+  .message-width--desktop {
+    max-width: 450px;
+  }
+  .is-hidden--desktop {
+    font-size: 0;
+    height: 0;
   }
 }
 section p {
@@ -185,3 +193,10 @@ section p {
   align-items: center;
   max-width: calc(var(--base-spacing) * 15);
 }
+/* going to be for javascript eventually
+.is-error {
+  border: 1px solid red;
+}
+.is-correct {
+  border: 1px solid green;
+} */
