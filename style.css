@@ -112,7 +112,6 @@ form {
   display: flex;
   flex-direction: column;
 }
-input,
 textarea {
   border: solid thin black;
 }
@@ -193,6 +192,7 @@ section p {
   align-items: center;
   max-width: calc(var(--base-spacing) * 15);
 }
+
 /* going to be for javascript eventually
 .is-error {
   border: 1px solid red;
