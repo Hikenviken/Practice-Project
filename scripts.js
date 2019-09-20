@@ -1,9 +1,21 @@
-function greeter(question = "Karen please come back I miss the kids.") {
-  return prompt(question);
+function greeter(question = "What is your name") {
+let answer = prompt(question);
+
+if (answer === "") {
+  console.log('you did not answer')
+  answer = prompt(question);
+
+}
+return answer;
 }
 
-const answer = greeter();
-console.info(answer);
 
-const h1TextContent = document.querySelector('h1').textContent = answer;
-console.log(h1TextContent);
+document.querySelector("h1").textContent = greeter();
+
+
+
+// const answer = greeter();
+// console.info(answer);
+
+// const h1TextContent = document.querySelector('h1').textContent;
+// console.log(h1TextContent);
