@@ -2,8 +2,7 @@ function greeter(question = "What is your name") {
 let answer = prompt(question);
 
 if (answer === "") {
-  console.log('you did not answer')
-  answer = prompt(question);
+  return greeter ();
 
 }
 return answer;
