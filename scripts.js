@@ -1,20 +1,10 @@
-function greeter(question = "What is your name") {
-let answer = prompt(question);
+//remove the mobile hidden class from the menu
+//select fa-bars
+//listen for a click on the bars
 
-if (answer === "") {
-  return greeter ();
+const hamburger = document.querySelector(".fa-bars");
+const hiddenUL = document.querySelector("ul");
 
-}
-return answer;
-}
-
-
-document.querySelector("#root").innerHTML = `<p>${greeter()}</p>`
-
-
-
-// const answer = greeter();
-// console.info(answer);
-
-// const h1TextContent = document.querySelector('h1').textContent;
-// console.log(h1TextContent);
+hamburger.addEventListener("click", function() {
+hiddenUL.classList.toggle("is-hidden--mobile");
+});
