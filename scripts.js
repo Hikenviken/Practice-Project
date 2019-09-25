@@ -9,7 +9,7 @@ return answer;
 }
 
 
-document.querySelector("h1").textContent = greeter();
+document.querySelector("#root").innerHTML = `<p>${greeter()}</p>`
 
 
 
