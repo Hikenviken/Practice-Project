@@ -1,5 +1,5 @@
-export default function(heading) {
-`<header
+export default function(heading = "Max Eddy Practice Project") {
+return `<header
 class="test-class" id="another-test">
       <figure>
         <img src="https://picsum.photos/id/340/200/300" alt=""  srcset="https://picsum.photos/200,

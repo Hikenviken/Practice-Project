@@ -1,4 +1,6 @@
-`<main>
+export default function() {
+  return `<header>
+<main>
 <div class="hero">
     <a class="fake-btn" href="#">Fake CTA Button</a>
 </div>
@@ -18,16 +20,5 @@
 <p>The reason I want to make with website is that I’ve always wanted an easier way to test different key switches without needing to constantly go from website to website from video to video, being able to access is all in a hub would save me and many others lots of time and frustration that comes with trying to figure out what key switch they want.</p>
 <a class="read-more-btn" href="">Read More!</a>
 </section>
-</div>
-<footer>
-<ul>
-    <li><a href="../">Home</a></li>
-    <li><a href="../about/">About</a></li>
-    <li><a href="./">Contact</a></li>
-    <li><a href="../gallery/">Gallery</a></li>
-    <li><a href="../blog/">Blog</a></li>
-</ul>
-  <p>&copy; 2019 Max Eddy - No Rights Reserved<p>
-</footer>
-</div>
 </main>`
+}
