@@ -18,13 +18,20 @@ ${Footer()}
 }
 render();
 
-const aboutLink = document.querySelector("#about");
+const links = document.querySelector("nav s");
+console.log(Array.isArray(links));
 
-aboutLink.addEventListener("click", function(event){
+console.log(links[3]);
+
+for (let i = 0; i < links.length; i += 1) {
+links[i].addEventListener("click", function(event){
 event.preventDefault();
 render(state[event.target.textContent]);
 
+console.log("Get your filthy cursor off of me.")
 })
+}
+//
 // const aboutText =
 // console.log("about text is:" , aboutText);
 // console.log(state[aboutText]);
