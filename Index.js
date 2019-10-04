@@ -6,6 +6,15 @@ const state = {
   },
     About: {
       heading: "About Page"
+    },
+    Contact: {
+      heading: "Contact Page"
+    },
+    Gallery: {
+      heading: "Gallery Page"
+    },
+    Blog: {
+      heading: "Blog Page"
     }
 };
 function render(st = state.home) {
@@ -18,17 +27,14 @@ ${Footer()}
 }
 render();
 
-const links = document.querySelector("nav s");
-console.log(Array.isArray(links));
-
-console.log(links[3]);
+const links = document.querySelector("nav a");
 
 for (let i = 0; i < links.length; i += 1) {
 links[i].addEventListener("click", function(event){
 event.preventDefault();
-render(state[event.target.textContent]);
-
-console.log("Get your filthy cursor off of me.")
+console.log(state[event.target.textContent]);
+console.log();
+// console.log("Get your filthy cursor off of me.")
 })
 }
 //
