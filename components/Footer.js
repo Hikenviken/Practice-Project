@@ -1,5 +1,5 @@
-export default function() {
-  return `<footer>
+export default (year = 2019)=> `
+  <footer>
   <ul>
   <li><a href="../">Home</a></li>
   <li><a href="../about/">About</a></li>
@@ -7,7 +7,7 @@ export default function() {
   <li><a href="../gallery/">Gallery</a></li>
   <li><a href="../blog/">Blog</a></li>
 </ul>
-<p>&copy; #{year} Max Eddy &bullet; No rights reserved
+<p>&copy; ${year} Max Eddy &bullet; No rights reserved
 </footer>
 `;
-}
+

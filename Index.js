@@ -1,39 +1,25 @@
 import {Header, Nav, Main, Footer} from "./components";
+import * as state from "./store";
 
-const state = {
-  home: {
-    heading: "Home Page"
-  },
-    About: {
-      heading: "About Page"
-    },
-    Contact: {
-      heading: "Contact Page"
-    },
-    Gallery: {
-      heading: "Gallery Page"
-    },
-    Blog: {
-      heading: "Blog Page"
-    }
-};
-function render(st = state.home) {
+console.log(state);
+
+
+function render(st = state.Home) {
 document.querySelector("#root").innerHTML = `
 ${Header(st.heading)}
-${Nav()}
+${Nav(st)}
 ${Main()}
 ${Footer()}
 `;
 }
 render();
 
-const links = document.querySelector("nav a");
+const links = document.querySelector("nav a, footer a");
 
 for (let i = 0; i < links.length; i += 1) {
 links[i].addEventListener("click", function(event){
 event.preventDefault();
-console.log(state[event.target.textContent]);
-console.log();
+render(state[event.target.textContent]);
 // console.log("Get your filthy cursor off of me.")
 })
 }
