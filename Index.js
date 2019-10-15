@@ -1,8 +1,17 @@
 import {Header, Nav, Main, Footer} from "./components";
 import * as state from "./store";
 
+import Navigo from "navigo";
+
+const router = new Navigo();
+
+router
+.on(":page", params => render(state[params.page]))
+.on('/', render())
+.resolve();
+
+
 function render(st = state.Home) {
-  console.log('st received is: ', st);
 
 document.querySelector("#root").innerHTML = `
 
@@ -11,22 +20,22 @@ ${Nav(st)}
 ${Main(st)}
 ${Footer()}
 `;
-}
-render();
 
-const links = document.querySelector("nav a, footer a");
-
-for (let i = 0; i < links.length; i += 1) {
-links[i].addEventListener("click", function(event){
+const links = document.querySelectorAll("nav a, footer a");
+links.forEach(link =>
+link.addEventListener("click", event => {
 event.preventDefault();
 render(state[event.target.textContent]);
-// console.log("Get your filthy cursor off of me.")
 })
+);
 }
-//
-// const aboutText =
-// console.log("about text is:" , aboutText);
-// console.log(state[aboutText]);
 
-//   console.log("Get your filthy cursor off me")
-//
+router
+  // Developer's Note: ':page' can be whatever you want to name the key that comes into `params` Object Literal
+  .on(":page", params =>
+    render(state[`${params.page.slice(0, 1).toUpperCase()}${params.page.slice(1).toLowerCase()}`])
+  )
+  .on("/", render())
+  .resolve();
+
+render();

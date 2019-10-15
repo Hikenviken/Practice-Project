@@ -11,4 +11,4 @@ export default () => `
 ${linksBuilder(Links)}
 </ul>
 </nav>
-`;
+`
