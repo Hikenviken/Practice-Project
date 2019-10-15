@@ -1,14 +1,14 @@
 import {Header, Nav, Main, Footer} from "./components";
 import * as state from "./store";
 
-console.log(state);
-
-
 function render(st = state.Home) {
+  console.log('st received is: ', st);
+
 document.querySelector("#root").innerHTML = `
-${Header(st.heading)}
+
+${Header(st)}
 ${Nav(st)}
-${Main()}
+${Main(st)}
 ${Footer()}
 `;
 }
