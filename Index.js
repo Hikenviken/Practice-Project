@@ -1,41 +1,54 @@
-import {Header, Nav, Main, Footer} from "./components";
+// Object
+import { Header, Nav, Main, Footer } from "./components";
 import * as state from "./store";
 
+// The uppercase "N" indicates that is a CONSTRUCTOR FUNCTION.
 import Navigo from "navigo";
+import axios from "axios";
 
-const router = new Navigo();
+const router = new Navigo(location.origin);
 
-router
-.on(":page", params => render(state[params.page]))
-.on('/', render())
-.resolve();
-
-
+/**
+ * Currently, #root div is empty.
+ * We want to grab that #root div.
+ * We want to assign the markup that is contained in the components as the innerHTML of root.
+ */
+// The parameter st represents a piece of state
 function render(st = state.Home) {
-
-document.querySelector("#root").innerHTML = `
-
-${Header(st)}
-${Nav(st)}
-${Main(st)}
-${Footer()}
+  /**
+   * Developer's Note: Since state.Links is static,
+   * there is no reason to pass it in each time.
+   *
+   * Instead, 'Nav' can import 'Links' directly.
+   */
+  document.querySelector("#root").innerHTML = `
+  ${Header(st)}
+  ${Nav()}
+  ${Main(st)}
+  ${Footer()}
 `;
 
-const links = document.querySelectorAll("nav a, footer a");
-links.forEach(link =>
-link.addEventListener("click", event => {
-event.preventDefault();
-render(state[event.target.textContent]);
-})
-);
+  router.updatePageLinks();
 }
 
 router
-  // Developer's Note: ':page' can be whatever you want to name the key that comes into `params` Object Literal
   .on(":page", params =>
-    render(state[`${params.page.slice(0, 1).toUpperCase()}${params.page.slice(1).toLowerCase()}`])
+    render(
+      state[
+        `${params.page.slice(0, 1).toUpperCase()}${params.page
+          .slice(1)
+          .toLowerCase()}`
+      ]
+    )
   )
   .on("/", render())
   .resolve();
 
-render();
+axios
+      .get("https://jsonplaceholder.typicode.com/posts")
+      .then(response => {
+        state.Blog.main = response.data;
+        const firstPost = response.data[0];
+        // console.log(response.data[0]);
+      })
+
