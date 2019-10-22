@@ -6,6 +6,8 @@ import * as state from "./store";
 import Navigo from "navigo";
 import axios from "axios";
 
+import { capitalize } from "lodash";
+
 const router = new Navigo(location.origin);
 
 /**
@@ -41,14 +43,33 @@ router
       ]
     )
   )
-  .on("/", render())
+  .on("/", () => render())
   .resolve();
 
 axios
-      .get("https://jsonplaceholder.typicode.com/posts")
-      .then(response => {
-        state.Blog.main = response.data;
-        const firstPost = response.data[0];
-        // console.log(response.data[0]);
-      })
+.get("https://jsonplaceholder.typicode.com/posts")
+.then(response => {
+  state.Blog.main = response.data.map(
+  ({title, body}) =>`
+  <article>
+    <h2>${title}</h2>
+    <p>${body}</p>
+    </article>
+    `
+    ).join("");
 
+    if (capitalize(router.lastRouteResolved().params.page) === "Blog") {
+      render(state.Blog);
+    }
+
+  })
+.catch(err => console.log(err));
+
+      //   const demoHTML = `
+      //   <article>
+      //   <h2>${firstPost.title}</h2>
+      //   <p>${firstPost.body}</p>
+      //   </article>
+      //   `;
+      //   state.Blog.main = demoHTML
+      //   console.log(state.blog.main);
